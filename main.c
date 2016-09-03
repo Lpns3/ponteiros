@@ -15,7 +15,7 @@
 int main ()
 {
 	// criação e inicialização de variaveis 
-	int variavel_1 = 1, variavel_2 = 2;
+	int variavel_1 = 1, variavel_2 = 2, aux = 0;
 	char controle = 'n', descarga;
 	
 	//criação de ponteiros
@@ -32,9 +32,21 @@ int main ()
 		printf ("\nVarivel_1 = %i", *ponteiro_1);
 		printf ("\nVarivel_2 = %i", *ponteiro_2);
 		
+		//aux recebe o conteudo de ponteiro_1
+		aux = *ponteiro_1;
+		//conteudo de ponteiro_1 recebe o conteudo de ponteiro_2
+		*ponteiro_1 = *ponteiro_2;
+		//conteudo de ponteiro_2 recebe o conteudo de ponteiro_1
+		*ponteiro_2 = aux;
+		
+		//exibe o novo valor em cada ponteiro a partir do endereço contido neles
+		printf ("\n\nVarivel_1 = %i", *ponteiro_1);
+		printf ("\nVarivel_2 = %i", *ponteiro_2);
+		
 		//exibe a solicitação de controle
 		printf ("\n\nDeseja finalizar o programa? (s/n)");
 		scanf ("%c", &controle);
+		
 		//caso atenda o caso, irá finalizar o loop
 		if (controle == 's') break;
 		
