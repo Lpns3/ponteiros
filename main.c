@@ -14,51 +14,22 @@
 
 int main ()
 {
-	// criação e inicialização de variaveis 
-	int variavel_1 = 1, variavel_2 = 2, aux = 0;
-	char controle = 'n', descarga;
 	
-	//criação de ponteiros
-	int *ponteiro_1, *ponteiro_2;
+	//criacao e inicializacao das variaveis e ponteiros
+	char Minha_String[] = {'1','2','3','4','5','6','7','8','9','0',};
+	char *Meu_Ponteiro = &Minha_String;
 	
-	//enquanto
-	while (1)
+	//exibe o valor contido em cada posicao da string a partir do endereco
+	//contigo no ponteiro
+	do
 	{
-		//inicializaoção dos ponteiros
-		ponteiro_1 = &variavel_1; // ponteiro_1 recebe endereço de variavel_1
-		ponteiro_2 = &variavel_2; // ponteiro_2 recebe endereço de variavel_2
-		
-		//exibe o valor em cada ponteiro a partir do endereço contido neles
-		printf ("\nVarivel_1 = %i", *ponteiro_1);
-		printf ("\nVarivel_2 = %i", *ponteiro_2);
-		
-		//aux recebe o conteudo de ponteiro_1
-		aux = *ponteiro_1;
-		//conteudo de ponteiro_1 recebe o conteudo de ponteiro_2
-		*ponteiro_1 = *ponteiro_2;
-		//conteudo de ponteiro_2 recebe o conteudo de ponteiro_1
-		*ponteiro_2 = aux;
-		
-		//exibe o novo valor em cada ponteiro a partir do endereço contido neles
-		printf ("\n\nVarivel_1 = %i", *ponteiro_1);
-		printf ("\nVarivel_2 = %i", *ponteiro_2);
-		
-		//exibe a solicitação de controle
-		printf ("\n\nDeseja finalizar o programa? (s/n)");
-		scanf ("%c", &controle);
-		
-		//caso atenda o caso, irá finalizar o loop
-		if (controle == 's') break;
-		
-		//exibe a solicitação de valor
-		printf ("Digite um valor para variavel_1: ");
-		//efetua a leitura de e tranfere o valor para variavel_1
-		scanf ("%i", ponteiro_1);
-		//exibe a solicitação de valor
-		printf ("Digite um valor para variavel_2: ");
-		//efetua a leitura de e tranfere o valor para variavel_2
-		scanf ("%i%c", ponteiro_2, &descarga);		
+		printf("\nO Meu_Ponteiro aponta para o valor: %c",*Meu_Ponteiro);
+		Meu_Ponteiro++;
 	}
-	//retorna 0
-	return 0;
+	while(*Meu_Ponteiro != 0);
+	
+	
+	//imprime o tamanho da variavel Minha_String 
+	printf("\n\nO valor da minha string eh: %i", sizeof(Minha_String));
+	
 }
