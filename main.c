@@ -1,10 +1,10 @@
 //###################################################################################################
-// Programa - atividade com ponteiros 
+// Programa - atividade com ponteiros e estrutura
 // Cadeira - laboratório de algoritmos II
 // 
 //###################################################################################################
 // Autor : LPNS - Luis Paulo Nery
-// Dara : 02/09/2016
+// Data : 09/09/2016
 //
 //###################################################################################################4
 
@@ -12,24 +12,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct 
+{
+	int indice;
+	char nome[50];
+	char telefone [15];
+} entrada;
+
 int main ()
 {
+	entrada pagina_01;
+	entrada *ptr = &pagina_01;
+	int n;
 	
-	//criacao e inicializacao das variaveis e ponteiros
-	char Minha_String[] = {'1','2','3','4','5','6','7','8','9','0',};
-	char *Meu_Ponteiro = &Minha_String;
+	//pagina_01.indice = 1;
+	//pagina_01.nome = {"Luis Paulo Nery Siveira"};
+	//pagina_01.telefone = {"(51) 9393-9051"};
 	
-	//exibe o valor contido em cada posicao da string a partir do endereco
-	//contigo no ponteiro
-	do
-	{
-		printf("\nO Meu_Ponteiro aponta para o valor: %c",*Meu_Ponteiro);
-		Meu_Ponteiro++;
-	}
-	while(*Meu_Ponteiro != 0);
+	printf ("\nInsira a Pagina: ");
+	scanf ("%i", &pagina_01.indice);
+	n = getchar ();
 	
+	printf ("\nInsira o Nome: ");
+	gets (&pagina_01.nome);	
+
+	printf ("\nInsira o Telefone: ");
+	gets (&pagina_01.telefone);
 	
-	//imprime o tamanho da variavel Minha_String 
-	printf("\n\nO valor da minha string eh: %i", sizeof(Minha_String));
-	
+	printf ("\nPagina: %i\n", pagina_01.indice);
+	printf ("\nNome: %s\n", pagina_01.nome);	
+	printf ("\nTelefone: %s\n", pagina_01.telefone);
+		
 }
